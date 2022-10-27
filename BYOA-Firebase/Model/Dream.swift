@@ -28,7 +28,7 @@ class Dream {
     var dreamData: [String: AnyHashable] {
         [Key.dreamTitle: self.dreamTitle,
         Key.dreamBody: self.dreamBody,
-        Key.dreamDate: self.dreamDate,
+         Key.dreamDate: self.dreamDate.timeIntervalSince1970,
         Key.uuid: self.uuid]
     }
     

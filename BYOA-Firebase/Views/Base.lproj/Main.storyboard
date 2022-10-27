@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0VW-f9-Ebm">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Dream List-->
         <scene sceneID="Fwa-0q-G3S">
             <objects>
-                <tableViewController id="n3x-cr-k54" sceneMemberID="viewController">
+                <tableViewController id="n3x-cr-k54" customClass="DreamListTableViewController" customModule="BYOA_Firebase" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="p2e-sv-qrc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="QVv-KM-cNm" detailTextLabel="Owq-p6-Hcu" rowHeight="60" style="IBUITableViewCellStyleValue1" id="Azn-7S-MEy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dreamCell" textLabel="QVv-KM-cNm" detailTextLabel="Owq-p6-Hcu" rowHeight="60" style="IBUITableViewCellStyleValue1" id="Azn-7S-MEy">
                                 <rect key="frame" x="0.0" y="50" width="390" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Azn-7S-MEy" id="LBe-9D-WeW">
@@ -50,7 +50,7 @@
                             <outlet property="delegate" destination="n3x-cr-k54" id="nPi-bQ-3Ws"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="AbG-E9-EI8">
+                    <navigationItem key="navigationItem" title="Dream List" id="AbG-E9-EI8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="etn-2X-Up7">
                             <connections>
                                 <segue destination="TEY-yV-t6L" kind="show" identifier="addNewDreamSegue" id="G1O-y7-2DG"/>
@@ -62,38 +62,35 @@
             </objects>
             <point key="canvasLocation" x="1201.5384615384614" y="-94.549763033175353"/>
         </scene>
-        <!--View Controller-->
+        <!--Dream Detail View Controller-->
         <scene sceneID="efu-4u-7Ze">
             <objects>
-                <viewController id="TEY-yV-t6L" sceneMemberID="viewController">
+                <viewController id="TEY-yV-t6L" customClass="DreamDetailViewController" customModule="BYOA_Firebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dcg-RR-ZGz">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="8mv-zS-gc9">
-                                <rect key="frame" x="75" y="91" width="240" height="280"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8mv-zS-gc9">
+                                <rect key="frame" x="20" y="91" width="350" height="287.33333333333331"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dream Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VLI-Yl-Vfw">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="36.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aBX-im-6Sc">
-                                        <rect key="frame" x="0.0" y="61.666666666666657" width="240" height="173"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dreamer" translatesAutoresizingMaskIntoConstraints="NO" id="aBX-im-6Sc">
+                                        <rect key="frame" x="0.0" y="42" width="350" height="214"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What was the dream like?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQL-aA-dQW">
-                                        <rect key="frame" x="0.0" y="259.66666666666669" width="240" height="20.333333333333314"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell us about your dream?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQL-aA-dQW">
+                                        <rect key="frame" x="0.0" y="264" width="350" height="23.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="280" id="pfj-f8-lU9"/>
-                                </constraints>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type Here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0We-5x-2yE">
-                                <rect key="frame" x="16" y="379" width="358" height="431"/>
+                                <rect key="frame" x="16" y="388.33333333333326" width="358" height="421.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -104,15 +101,25 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0We-5x-2yE" firstAttribute="bottom" secondItem="LFg-sv-0rY" secondAttribute="bottom" id="9mE-gI-SdE"/>
-                            <constraint firstItem="8mv-zS-gc9" firstAttribute="leading" secondItem="LFg-sv-0rY" secondAttribute="leading" constant="75" id="9zC-Cg-X0l"/>
-                            <constraint firstItem="LFg-sv-0rY" firstAttribute="trailing" secondItem="8mv-zS-gc9" secondAttribute="trailing" constant="75" id="HS8-bD-d3C"/>
+                            <constraint firstItem="8mv-zS-gc9" firstAttribute="leading" secondItem="LFg-sv-0rY" secondAttribute="leading" constant="20" id="9zC-Cg-X0l"/>
+                            <constraint firstItem="0We-5x-2yE" firstAttribute="top" secondItem="8mv-zS-gc9" secondAttribute="bottom" constant="10" id="A3O-5i-D55"/>
+                            <constraint firstItem="LFg-sv-0rY" firstAttribute="trailing" secondItem="8mv-zS-gc9" secondAttribute="trailing" constant="20" id="HS8-bD-d3C"/>
                             <constraint firstItem="LFg-sv-0rY" firstAttribute="trailing" secondItem="0We-5x-2yE" secondAttribute="trailing" constant="16" id="kD4-5e-fg0"/>
                             <constraint firstItem="0We-5x-2yE" firstAttribute="leading" secondItem="LFg-sv-0rY" secondAttribute="leading" constant="16" id="lOb-x0-IMe"/>
-                            <constraint firstItem="0We-5x-2yE" firstAttribute="top" secondItem="8mv-zS-gc9" secondAttribute="bottom" constant="8" id="pKq-jS-hD6"/>
                             <constraint firstItem="8mv-zS-gc9" firstAttribute="top" secondItem="LFg-sv-0rY" secondAttribute="top" id="zu0-dz-sQO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4MH-RS-86j"/>
+                    <navigationItem key="navigationItem" id="4MH-RS-86j">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="AtQ-Fs-u7H">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="TEY-yV-t6L" id="keO-L2-9vH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dreamBodyTextView" destination="0We-5x-2yE" id="LMM-7a-YPQ"/>
+                        <outlet property="dreamTitleTextField" destination="VLI-Yl-Vfw" id="reK-9X-lZt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pG3-Ks-tDw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -141,6 +148,7 @@
         <segue reference="G1O-y7-2DG"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="dreamer" width="320" height="214"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
