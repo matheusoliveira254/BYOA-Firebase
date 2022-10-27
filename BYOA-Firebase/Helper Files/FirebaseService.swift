@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseFirestore
 
 enum FirebaseError: Error {
     case firebaseError(Error)
@@ -23,27 +23,27 @@ protocol FirebaseSyncable {
 
 struct FirebaseService: FirebaseSyncable {
     
-    let ref = Database.database().reference()
+    let ref = Firestore.firestore()
     
     func save(_ dream: Dream) {
-        ref.child(Dream.Key.collectionType).updateChildValues([dream.uuid: dream.dreamData])
+        ref.collection(Dream.Key.collectionType).document(dream.uuid).setData(dream.dreamData)
     }
     
     func loadDreams(completion: @escaping (Result<[Dream], FirebaseError>) -> Void) {
         
-        ref.child(Dream.Key.collectionType).getData { error, snapshot in
+        ref.collection(Dream.Key.collectionType).getDocuments { snapshot, error in
             if let error {
                 print(error.localizedDescription)
                 completion(.failure(.firebaseError(error)))
                 return
             }
 
-            guard let data = snapshot?.value as? [String: [String: Any]] else {
+            guard let data = snapshot?.documents else {
                 completion(.failure(.noDataFound))
                 return
             }
 
-            let dataArray = Array(data.values)
+            let dataArray = data.compactMap({$0.data()})
             let logs = dataArray.compactMap{ Dream(fromDictionary: $0)}
             let sortedDreams = logs.sorted(by: {$0.dreamDate > $1.dreamDate})
             completion(.success(sortedDreams))
@@ -51,6 +51,6 @@ struct FirebaseService: FirebaseSyncable {
     }
     
     func delete(dream: Dream) {
-        ref.child(Dream.Key.collectionType).child(dream.uuid).removeValue()
+        ref.collection(Dream.Key.collectionType).document(dream.uuid).delete()
     }
 }//End of Struct

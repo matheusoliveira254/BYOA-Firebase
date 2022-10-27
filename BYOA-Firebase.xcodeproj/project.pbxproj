@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1222423290AF051005CAD8E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A1222422290AF051005CAD8E /* FirebaseFirestore */; };
+		A1222425290AF051005CAD8E /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A1222424290AF051005CAD8E /* FirebaseFirestoreSwift */; };
 		A1D2305B290737A4004A0BD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D2305A290737A4004A0BD7 /* AppDelegate.swift */; };
 		A1D2305D290737A4004A0BD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D2305C290737A4004A0BD7 /* SceneDelegate.swift */; };
 		A1D2305F290737A4004A0BD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D2305E290737A4004A0BD7 /* ViewController.swift */; };
@@ -21,8 +23,6 @@
 		A1D230922909AE5C004A0BD7 /* DreamDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D230912909AE5C004A0BD7 /* DreamDetailViewModel.swift */; };
 		A1D230952909B3FC004A0BD7 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D230942909B3FC004A0BD7 /* FirebaseService.swift */; };
 		A1D230972909B411004A0BD7 /* DateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D230962909B411004A0BD7 /* DateService.swift */; };
-		A1D230A02909DC62004A0BD7 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = A1D2309F2909DC62004A0BD7 /* FirebaseDatabase */; };
-		A1D230A22909DC62004A0BD7 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A1D230A12909DC62004A0BD7 /* FirebaseDatabaseSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,8 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1D230A22909DC62004A0BD7 /* FirebaseDatabaseSwift in Frameworks */,
-				A1D230A02909DC62004A0BD7 /* FirebaseDatabase in Frameworks */,
+				A1222423290AF051005CAD8E /* FirebaseFirestore in Frameworks */,
+				A1222425290AF051005CAD8E /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,8 +160,8 @@
 			);
 			name = "BYOA-Firebase";
 			packageProductDependencies = (
-				A1D2309F2909DC62004A0BD7 /* FirebaseDatabase */,
-				A1D230A12909DC62004A0BD7 /* FirebaseDatabaseSwift */,
+				A1222422290AF051005CAD8E /* FirebaseFirestore */,
+				A1222424290AF051005CAD8E /* FirebaseFirestoreSwift */,
 			);
 			productName = "BYOA-Firebase";
 			productReference = A1D23057290737A4004A0BD7 /* BYOA-Firebase.app */;
@@ -192,7 +192,7 @@
 			);
 			mainGroup = A1D2304E290737A4004A0BD7;
 			packageReferences = (
-				A1D2309E2909DC62004A0BD7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A1222421290AF051005CAD8E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = A1D23058290737A4004A0BD7 /* Products */;
 			projectDirPath = "";
@@ -453,7 +453,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A1D2309E2909DC62004A0BD7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		A1222421290AF051005CAD8E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -464,15 +464,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A1D2309F2909DC62004A0BD7 /* FirebaseDatabase */ = {
+		A1222422290AF051005CAD8E /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A1D2309E2909DC62004A0BD7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
+			package = A1222421290AF051005CAD8E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
-		A1D230A12909DC62004A0BD7 /* FirebaseDatabaseSwift */ = {
+		A1222424290AF051005CAD8E /* FirebaseFirestoreSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A1D2309E2909DC62004A0BD7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabaseSwift;
+			package = A1222421290AF051005CAD8E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
