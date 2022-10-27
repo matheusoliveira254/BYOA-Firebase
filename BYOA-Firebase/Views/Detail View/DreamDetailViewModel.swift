@@ -31,5 +31,6 @@ class DreamDetailViewModel {
         
         dream.dreamTitle = title
         dream.dreamBody = body
+        firebaseService.save(dream)
     }
 }//End of class
